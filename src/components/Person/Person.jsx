@@ -4,8 +4,7 @@ import './Person.scss';
 export const Person = ({ person }) => {
   const { name, age, sex, isMarried, partnerName } = person;
 
-  const getAge = person.hasOwnProperty('age')
-  ? `I am ${age}` : null;
+  const getAge = person.hasOwnProperty('age') ? `I am ${age}` : null;
 
   const checkPartner = isMarried
     ? `${partnerName} is my ${sex === 'm' ? 'wife' : 'husband'}`
@@ -14,11 +13,8 @@ export const Person = ({ person }) => {
   return (
     <section className="Person">
       <h2 className="Person__name">My name is {name}</h2>
-      {getAge && (
-        <p className="Person__age">{getAge}</p>
-      )}
+      {getAge && <p className="Person__age">{getAge}</p>}
       <p className="Person__partner">{checkPartner}</p>
     </section>
   );
 };
-
